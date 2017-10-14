@@ -1,12 +1,17 @@
-﻿using System;
+﻿using ComicShop.Data.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ComicShop.Data.Services.Contracts
 {
-    class IOrderService
+    public interface IOrderService
     {
+        bool CreateOrder(string userId, IList<Comic> comicsList);
+
+        IQueryable<Order> GetAllOrders();
+
+        IQueryable<Order> GetOrdersByUserId(string userId);
+
+        void ProceedOrderById(int id);
     }
 }

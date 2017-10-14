@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ComicShop.Data.Models;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ComicShop.Data.Services.Contracts
 {
-    class IComicService
+    public interface IComicService
     {
+        void Create(Comic comic);
+
+        IQueryable<Comic> GetAllComics();
+
+        Comic GetComicById(int id);
+
+        void UpdateComic(Comic comic);
     }
 }
