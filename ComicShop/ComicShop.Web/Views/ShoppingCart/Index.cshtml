@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using ComicShop.Data.Models
+@using Microsoft.AspNet.Identity
+
+<div class="jumbotron" style="text-align:center; background-color: transparent;">
+</div>
+<div class="container-fluid">
+    <div class="col-md-6 col-md-push-3 page-form" style="background: repeating-linear-gradient(to right, #1d1d1d 0%, #313131 21%, #323232 50%, #313131 79%, #1d1d1d 100%); padding: 15px 15px 15px 15px; border-radius:15px 15px 15px 15px">
+        <h1 class="align-center">Your Cart Items:</h1>
+        <hr />
+        @if (Session["CartItems"] != null)
+        {
+            decimal totalPrice = 0;
+
+            foreach (Comic item in Session["CartItems"] as List<Comic>)
+            {
+                totalPrice += item.Price;
+                <div class="jumbotron" style="display:inline-block; background-color: #1d1d1d; padding:10px 10px 10px 10px; border-radius:5px 5px 5px 5px">
+                    <span> @item.Name </span>
+                    <br />
+                    <span>
+                        <img src="@item.ImageUrl" width="80" height="60" class="img-rounded" />
+                    </span>
+                    <br />
+                    <span>
+                        @item.Price.ToString("C")
+                    </span>
+                    <p>
+                        <a class="add-to-cart" href="/ShoppingCart/RemoveFromCart/?Id=@item.Id">Remove from cart</a>
+                    </p>
+                </div>
+            }
+
+            var comicsList = new List<Comic>();
+            comicsList.AddRange(Session["CartItems"] as List<Comic>);
+            int comicsCount = comicsList.Count;
+            if (comicsCount > 0)
+            {
+                <hr />
+                <div style="background-color: transparent;">
+                    <strong style="font-size:20px">Total Items:   </strong><strong style="color:#dcc08e; font-size:large">@comicsCount</strong>
+                    <strong style="margin-left:10px; font-size:20px">Total Price:   </strong><strong style="color:#dcc08e; font-size:large">@totalPrice.ToString("C")</strong>
+                    <a class="site-button add-to-cart" style="float:right; text-align:center;" href="/Order/Create/?userId=@User.Identity.GetUserId()">Order!</a>
+                </div>
+            }
+        }
+    </div>
+</div>
