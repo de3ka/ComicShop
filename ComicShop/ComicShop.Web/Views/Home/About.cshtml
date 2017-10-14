@@ -1,7 +1,15 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="jumbotron" style="text-align:center; background-color: transparent;">
+</div>
+<div class="container-fluid">
+    <div class="jumbotron" style="text-align:center; background: repeating-linear-gradient(to right, #1d1d1d 0%, #313131 21%, #323232 50%, #313131 79%, #1d1d1d 100%);border-radius:15px 15px 15px 15px">
+        <h2 class="align-center">@ViewBag.Title:</h2>
+        <h3 class="align-center">@ViewBag.Message</h3>
+        <hr />
+        <p>Use this area to provide additional information.</p>
+    </div>
+</div>
