@@ -1,0 +1,21 @@
+﻿
+@model IEnumerable<ComicShop.Web.Models.OrderViewModel>
+
+@{
+    ViewBag.Title = "MyOrders";
+}
+
+<div class="jumbotron" style="text-align:center; background-color: transparent;">
+</div>
+<div class="container-fluid">
+    <div style="background: repeating-linear-gradient(to right, #1d1d1d 0%, #313131 21%, #323232 50%, #313131 79%, #1d1d1d 100%); padding: 15px 15px 15px 15px; border-radius:15px 15px 15px 15px">
+        <h1 class="align-center">My orders:</h1>
+        <hr />
+        @foreach (var order in Model)
+        {
+            <h3>@Html.DisplayFor(o => order)</h3>;
+        }
+    </div>
+</div>
+
+
