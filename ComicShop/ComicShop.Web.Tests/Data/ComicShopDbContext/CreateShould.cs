@@ -6,7 +6,7 @@ namespace ComicShop.Web.Tests.Data.ComicShopDbContext
      [TestFixture]
       public class CreateShould
       {
-        /*   [Test]
+          [Test]
           public void ReturnNewDbContextInstance()
           {
               // Arrange & Act
@@ -15,6 +15,6 @@ namespace ComicShop.Web.Tests.Data.ComicShopDbContext
               // Assert
               Assert.IsNotNull(newContext);
               Assert.IsInstanceOf<IComicShopDbContext>(newContext);
-          }*/
+          }
     }
 }

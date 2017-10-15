@@ -8,7 +8,7 @@ namespace ComicShop.Web.Tests.Data.ComicShopDbContext
     [TestFixture]
     public class ConstructorShould
     {
-       /* [Test]
+        [Test]
         public void HaveParameterlessConstructor()
         {
             // Arrange & Act
@@ -16,9 +16,9 @@ namespace ComicShop.Web.Tests.Data.ComicShopDbContext
 
             // Assert
             Assert.IsInstanceOf<ComicShop.Data.ComicShopDbContext>(context);
-        }*/
+        }
 
-       /* [Test]
+        [Test]
         public void Return_InstanceOfIComicShopDbContext()
         {
             // Arrange & Act
@@ -26,9 +26,9 @@ namespace ComicShop.Web.Tests.Data.ComicShopDbContext
 
             // Assert
             Assert.IsInstanceOf<IComicShopDbContext>(context);
-        }*/
+        }
 
-        /* [Test]
+         [Test]
          public void SetComicsDbSetAndOrdersDbSet()
          {
              // Arrange
@@ -43,6 +43,6 @@ namespace ComicShop.Web.Tests.Data.ComicShopDbContext
              //Assert
              Assert.AreEqual(context.Comics, comics);
              Assert.AreEqual(context.Orders, orders);
-         }*/
+         }
     }
 }
