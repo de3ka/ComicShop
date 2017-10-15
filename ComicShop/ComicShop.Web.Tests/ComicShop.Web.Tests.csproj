@@ -15,6 +15,8 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,6 +66,14 @@
       <HintPath>..\packages\NUnit.3.8.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -109,10 +119,72 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="TestStack.FluentMVCTesting, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TestStack.FluentMVCTesting.3.0.0\lib\NET45\TestStack.FluentMVCTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminController\AddComicPostShould.cs" />
+    <Compile Include="Controllers\AdminController\AddComicShould.cs" />
+    <Compile Include="Controllers\AdminController\CheckOrdersShould.cs" />
+    <Compile Include="Controllers\AdminController\ConstructorShould.cs" />
+    <Compile Include="Controllers\AdminController\EditComicPostShould.cs" />
+    <Compile Include="Controllers\AdminController\EditComicShould.cs" />
+    <Compile Include="Controllers\AdminController\IndexShould.cs" />
+    <Compile Include="Controllers\AdminController\ProceedOrderByIdShould.cs" />
+    <Compile Include="Controllers\ComicsController\ConstructorShould.cs" />
+    <Compile Include="Controllers\ComicsController\DetailsShould.cs" />
+    <Compile Include="Controllers\ComicsController\IndexShould.cs" />
+    <Compile Include="Controllers\ErrorController\BadRequestShould.cs" />
+    <Compile Include="Controllers\ErrorController\IndexShould.cs" />
+    <Compile Include="Controllers\ErrorController\NotFoundShould.cs" />
+    <Compile Include="Controllers\ErrorController\ServerErrorShould.cs" />
+    <Compile Include="Controllers\HomeController\AboutShould.cs" />
+    <Compile Include="Controllers\HomeController\ConstructorShould.cs" />
+    <Compile Include="Controllers\HomeController\ContactShould.cs" />
+    <Compile Include="Controllers\HomeController\IndexShould.cs" />
+    <Compile Include="Controllers\OrderController\ConstructorShould.cs" />
+    <Compile Include="Controllers\OrderController\CreateShould.cs" />
+    <Compile Include="Controllers\OrderController\IndexShould.cs" />
+    <Compile Include="Controllers\OrderController\MyOrdersShould.cs" />
+    <Compile Include="Controllers\ShoppingCartController\ConstructorShould.cs" />
+    <Compile Include="Controllers\ShoppingCartController\IndexShould.cs" />
+    <Compile Include="Controllers\ShoppingCartController\OutOfStockShould.cs" />
+    <Compile Include="Data\ComicShopDbContext\ConstructorShould.cs" />
+    <Compile Include="Data\ComicShopDbContext\CreateShould.cs" />
+    <Compile Include="Data\Configuration\ConstructorShould.cs" />
+    <Compile Include="Data\EfComicShopDataProvider\AddShould.cs" />
+    <Compile Include="Data\EfComicShopDataProvider\AllShould.cs" />
+    <Compile Include="Data\EfComicShopDataProvider\ConstructorShould.cs" />
+    <Compile Include="Data\EfComicShopDataProvider\DeleteShould.cs" />
+    <Compile Include="Data\EfComicShopDataProvider\DetachShould.cs" />
+    <Compile Include="Data\EfComicShopDataProvider\DisposeShould.cs" />
+    <Compile Include="Data\EfComicShopDataProvider\GetByIdShould.cs" />
+    <Compile Include="Data\EfComicShopDataProvider\SaveChangesShould.cs" />
+    <Compile Include="Data\EfComicShopDataProvider\UpdateShould.cs" />
+    <Compile Include="Helpers\DbContextForTest.cs" />
+    <Compile Include="Helpers\DbSetForTest.cs" />
     <Compile Include="Models\ComicModelSould.cs" />
+    <Compile Include="Models\OrderModelShould.cs" />
+    <Compile Include="Models\UserModelShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ComicService\ConstructorShould.cs" />
+    <Compile Include="Services\ComicService\CreateShould.cs" />
+    <Compile Include="Services\ComicService\GetAllComicsShould.cs" />
+    <Compile Include="Services\ComicService\GetComicByIdShould.cs" />
+    <Compile Include="Services\ComicService\UpdateComicShould.cs" />
+    <Compile Include="Services\OrderService\ConstructorShould.cs" />
+    <Compile Include="Services\OrderService\CreateOrderShould.cs" />
+    <Compile Include="Services\OrderService\GetAllOrdersShould.cs" />
+    <Compile Include="Services\OrderService\GetOrdersByUserIdShould.cs" />
+    <Compile Include="Services\OrderService\ProceedOrderByIdShould.cs" />
+    <Compile Include="ViewModels\ComicViewModelShould.cs" />
+    <Compile Include="ViewModels\ExternalLoginConfirmationViewModelShould.cs" />
+    <Compile Include="ViewModels\ExternalLoginListViewModelShould.cs" />
+    <Compile Include="ViewModels\LoginViewModelShould.cs" />
+    <Compile Include="ViewModels\OrderViewModelShould.cs" />
+    <Compile Include="ViewModels\RegisterViewModelShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -121,14 +193,24 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ComicShop.Data.Models\ComicShop.Data.Models.csproj">
+      <Project>{06F522A2-2EFC-4DC7-99AF-A6BF8FE97F82}</Project>
+      <Name>ComicShop.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ComicShop.Data.Services\ComicShop.Data.Services.csproj">
+      <Project>{2661DF3D-FEBE-4B31-94B0-DB09C4F9CA82}</Project>
+      <Name>ComicShop.Data.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ComicShop.Data\ComicShop.Data.csproj">
+      <Project>{55FC55B3-D62C-4E02-9BB7-16ED3007AFE9}</Project>
+      <Name>ComicShop.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ComicShop.Web\ComicShop.Web.csproj">
       <Project>{B7BD5D0B-99BF-4496-A9E4-CE1A85E1B74F}</Project>
       <Name>ComicShop.Web</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
