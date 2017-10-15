@@ -1,0 +1,54 @@
+﻿
+@model IEnumerable<ComicShop.Data.Models.Order>
+
+    @{
+        ViewBag.Title = "CheckOrders";
+    }
+
+    <div class="jumbotron" style="text-align:center; background-color: transparent;">
+    </div>
+    <div class="container-fluid">
+        <div class="jumbotron" style="text-align:center; background: repeating-linear-gradient(to right, #1d1d1d 0%, #313131 21%, #323232 50%, #313131 79%, #1d1d1d 100%);border-radius:15px 15px 15px 15px">
+            <h2 class="align-center">Process Orders:</h2>
+            <hr />
+            @foreach (var order in Model)
+            {
+                <p>
+                    Ordered on: @String.Format("{0:f}", order.OrderedOn)
+                </p>
+                <p>
+                    Ordered By: @order.User.UserName
+                </p>
+                <p>
+                    Shipping Adress: @order.User.Address
+                </p>
+                foreach (var comic in order.Comics)
+                {
+                    <p>Name: @comic.Name </p>
+                    <p>
+                        Count: @comic.OrderedItemsCount
+                    </p>
+                }
+                <span>
+                    Items: @order.ItemsCount
+                </span>
+                <span>
+                    Total Price: @order.TotalPrice.ToString("C")
+                </span>
+                bool isProceeded = order.isProceeded;
+                <span>
+                    Status: @if (isProceeded)
+                {
+                        <span style="color:greenyellow">Proceeded</span>
+                    }
+                    else
+                    {
+                        <span style="color:red">Not Proceeded</span>
+                        <span style="margin-left:15px">@Html.ActionLink("Mark as proceeded", "ProceedOrderById", "Admin", new { orderId = order.Id }, null)</span>
+                    }
+                </span>
+                <hr />
+            }
+        </div>
+    </div>
+
