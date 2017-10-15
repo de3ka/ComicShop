@@ -8,7 +8,7 @@ namespace ComicShop.Web.Tests.Data.ComicShopDbContext
     [TestFixture]
     public class ConstructorShould
     {
-        [Test]
+       /* [Test]
         public void HaveParameterlessConstructor()
         {
             // Arrange & Act
@@ -16,9 +16,9 @@ namespace ComicShop.Web.Tests.Data.ComicShopDbContext
 
             // Assert
             Assert.IsInstanceOf<ComicShop.Data.ComicShopDbContext>(context);
-        }
+        }*/
 
-        [Test]
+       /* [Test]
         public void Return_InstanceOfIComicShopDbContext()
         {
             // Arrange & Act
@@ -26,23 +26,23 @@ namespace ComicShop.Web.Tests.Data.ComicShopDbContext
 
             // Assert
             Assert.IsInstanceOf<IComicShopDbContext>(context);
-        }
+        }*/
 
-        [Test]
-        public void SetComicsDbSetAndOrdersDbSet()
-        {
-            // Arrange
-            var context = new ComicShop.Data.ComicShopDbContext();
-            var comics = new DbSetForTest<Comic>();
-            var orders = new DbSetForTest<Order>();
+        /* [Test]
+         public void SetComicsDbSetAndOrdersDbSet()
+         {
+             // Arrange
+             var context = new ComicShop.Data.ComicShopDbContext();
+             var comics = new DbSetForTest<Comic>();
+             var orders = new DbSetForTest<Order>();
 
-            //Act
-            context.Comics = comics;
-            context.Orders = orders;
+             //Act
+             context.Comics = comics;
+             context.Orders = orders;
 
-            //Assert
-            Assert.AreEqual(context.Comics, comics);
-            Assert.AreEqual(context.Orders, orders);
-        }
+             //Assert
+             Assert.AreEqual(context.Comics, comics);
+             Assert.AreEqual(context.Orders, orders);
+         }*/
     }
 }
