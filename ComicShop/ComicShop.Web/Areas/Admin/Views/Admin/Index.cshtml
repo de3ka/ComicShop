@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="jumbotron" style="text-align:center; background-color: transparent;">
+</div>
+<div class="container-fluid">
+    <div class="jumbotron" style="text-align:center; background: repeating-linear-gradient(to right, #1d1d1d 0%, #313131 21%, #323232 50%, #313131 79%, #1d1d1d 100%); border-radius:15px 15px 15px 15px">
+        <h2 class="align-center">Select what to do:</h2>
+        <hr />
+        @Html.ActionLink("Add new comic", "AddComic", new { area = "Admin" }, new { @class = "btn site-button" })
+        @Html.ActionLink("Check orders", "CheckOrders", new { area = "Admin" }, new { @class = "btn site-button" })
+    </div>
+</div>
+
