@@ -1,0 +1,52 @@
+﻿
+@model ComicShop.Data.Models.Comic
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron" style="text-align:center; background-color: transparent;">
+</div>
+<div class="container-fluid">
+    <div style="background: repeating-linear-gradient(to right, #1d1d1d 0%, #313131 21%, #323232 50%, #313131 79%, #1d1d1d 100%); padding: 15px 15px 15px 15px; border-radius:15px 15px 15px 15px">
+        <h2 class="align-center">Add New Comic:</h2>
+        <hr />
+        <div class="row form-wrapper">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AvailableCount, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.AvailableCount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AvailableCount, "", new { @class = "text-danger" })
+                </div>
+                <button type="submit" class="btn pull-right site-button create-click">Create</button>
+            }
+        </div>
+    </div>
+</div>
