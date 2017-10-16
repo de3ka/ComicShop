@@ -16,7 +16,7 @@
 
 ## Links
 
-[Azure host link](http://comicshopmvc.azurewebsites.net) | 
+[Azure host link](http://comicshopmvc.azurewebsites.net)
 -----------------------------------------------------------------------------------------------------------------------
 
 ## Author
