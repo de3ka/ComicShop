@@ -1,4 +1,4 @@
-## AppVeyor & Coveralls badges
+## AppVeyor Badge
 [![Build status](https://ci.appveyor.com/api/projects/status/k4b81dhasqmclpo2/branch/master?svg=true)](https://ci.appveyor.com/project/de3ka/comicshop/branch/master)
 # Comic Shop 
   - Online ecommerce type site for comic purchases. Fast and easy way to browse through our catalogue, read a short summary about a particular issue, select the issue(s) you want to our cart and create your order.
