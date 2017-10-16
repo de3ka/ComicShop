@@ -7,6 +7,3 @@ build:
   project: ./ComicShop/ComicShop.sln
   verbosity: minimal
 
-environment:
-    COVERALLS_REPO_TOKEN:  
-       secure: dWTMEyppw6+k1jtfvkZP6D8IcGzfWxk22rz0iMG2fND3RO6IT7yMEui9D4LeB39Z
